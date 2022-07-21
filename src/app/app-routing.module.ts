@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CatsDataResolver } from './cats/cats-overview/cats-data-resolver';
 import { CatsOverviewComponent } from './cats/cats-overview/cats-overview.component';
 import { CatsDetailViewComponent } from './cats/cats-detail-view/cats-detail-view.component';
+import { CatsImageComponent } from './cats/cats-image/cats-image.component';
 
 export const appRoutes: Routes = [
   {
@@ -18,6 +19,10 @@ export const appRoutes: Routes = [
   {
     path: 'cats/:catName',
     component: CatsDetailViewComponent
+  },
+  {
+    path: 'cats/:catName',
+    component: CatsImageComponent
   }
 ];
 
