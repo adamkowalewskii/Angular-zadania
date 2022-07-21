@@ -28,4 +28,18 @@ export class CatsOverviewComponent implements OnInit {
   onClick($event: Cat) {
     this.router.navigate(['cats', $event.name]);
   }
+
+  onFocus() : void{
+
+
+    console.log("Focus")
+  }
+
+  onButtonClickNameSort(){
+    this.cats.sort((a,b) => a.name.localeCompare(b.name));
+  }
+
+  onButtonClickBreedSort(){
+    this.cats.sort((a,b) => a.breed.localeCompare(b.breed));
+  }
 }
