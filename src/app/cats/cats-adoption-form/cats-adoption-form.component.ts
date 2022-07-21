@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { CatsAdoptionService } from './cats-adoption.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { CatsDataService } from '../cats-data.service';
 
 @Component({
   selector: 'app-cats-adoption-form',
@@ -19,7 +19,7 @@ export class CatsAdoptionFormComponent implements OnInit {
   adoptionForm!: FormGroup;
   private readonly PHONE_REGEX = /^[0-9\-\s]+$/;
 
-  constructor(private catsAdoptionService: CatsAdoptionService) {
+  constructor(private catsAdoptionService: CatsAdoptionService, private catsDataService : CatsDataService) {
   }
 
   ngOnInit(): void {
@@ -77,5 +77,8 @@ export class CatsAdoptionFormComponent implements OnInit {
     };
   };
 
+  onButtonClick(){
+    this.catsDataService.setCatReserved(this.catsName)
+  }
 
 }

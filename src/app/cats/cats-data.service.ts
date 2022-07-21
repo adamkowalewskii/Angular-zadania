@@ -64,4 +64,9 @@ export class CatsDataService {
   getCat(name: string): Observable<Cat > {
     return of(this.allCats.find(c => c.name === name)!);
   }
+
+  setCatReserved(name: string){
+    this.allCats.find(c => c.name === name).isReserved = true;
+  }
 }
+

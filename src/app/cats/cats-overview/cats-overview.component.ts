@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Cat } from '../model';
 import { ActivatedRoute, Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-cats-overview',
   templateUrl: './cats-overview.component.html',
